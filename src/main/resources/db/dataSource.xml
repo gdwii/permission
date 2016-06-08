@@ -23,7 +23,7 @@
 		<property name="initialSize" value="${pool.initialSize}" />
 		<property name="maxTotal" value="${pool.maxTotal}" />
 		<property name="maxIdle" value="${pool.maxIdle}" />
-		<property name="maxWait" value="${pool.maxWait}" />
+		<property name="maxWaitMillis" value="${pool.maxWaitMillis}" />
 		<property name="defaultAutoCommit" value="${pool.defaultAutoCommit}" />
 	</bean>
 	
@@ -35,7 +35,7 @@
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage"
-			value="" />
+			value="com.gdwii.permission.mapper" />
 	</bean>
 
 	<!-- 事务配置 -->
