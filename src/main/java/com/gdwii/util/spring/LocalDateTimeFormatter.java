@@ -4,9 +4,8 @@ import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.util.Locale;
 
+import com.gdwii.util.time.DateTimeUtil;
 import org.springframework.format.Formatter;
-
-import com.gdwii.util.DateTimeUtil;
 
 public class LocalDateTimeFormatter implements Formatter<LocalDateTime> {
 	@Override
@@ -16,6 +15,6 @@ public class LocalDateTimeFormatter implements Formatter<LocalDateTime> {
 
 	@Override
 	public LocalDateTime parse(String text, Locale locale) throws ParseException {
-		return DateTimeUtil.parse(text);
+		return DateTimeUtil.parseDateTime(text);
 	}
 }

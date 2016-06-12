@@ -1,16 +1,15 @@
 package com.gdwii.permission.service;
 
-import java.util.List;
-
+import com.gdwii.permission.dao.RoleDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gdwii.permission.mapper.RoleMapper;
+import java.util.List;
 
 @Service
 public class RoleService {
 	@Autowired
-	private RoleMapper roleMapper;
+	private RoleDao roleDao;
 	
 	public boolean exist(List<Integer> roleIdList){
 		if(roleIdList == null || roleIdList.isEmpty()){
@@ -25,6 +24,6 @@ public class RoleService {
 	}
 	
 	public boolean exist(Integer roleId){
-		return roleMapper.selectById(roleId) != null;
+		return roleDao.getById(roleId) != null;
 	}
 }

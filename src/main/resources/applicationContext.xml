@@ -10,4 +10,8 @@
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 	<import resource="db/dataSource.xml"/>
+
+	<bean class="com.gdwii.util.mybatis.MybatisUtil">
+		<constructor-arg ref="sqlSessionFactory"/>
+	</bean>
 </beans>	

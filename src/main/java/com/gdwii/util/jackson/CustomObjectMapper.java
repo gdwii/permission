@@ -1,18 +1,14 @@
 package com.gdwii.util.jackson;
 
-import java.io.IOException;
-import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.JsonSerializer;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.*;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.gdwii.util.DateTimeUtil;
+import com.gdwii.util.time.DateTimeUtil;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
 
 
 public class CustomObjectMapper extends ObjectMapper{
@@ -43,7 +39,7 @@ public class CustomObjectMapper extends ObjectMapper{
 		@Override
 		public LocalDateTime deserialize(JsonParser p, DeserializationContext ctext)
 				throws IOException, JsonProcessingException {
-			return DateTimeUtil.parse(p.getValueAsString());
+			return DateTimeUtil.parseDateTime(p.getValueAsString());
 		}
 	}
 	
